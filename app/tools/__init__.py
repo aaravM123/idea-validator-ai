@@ -1,0 +1,1 @@
+# Tools package for Idea Validator AI 

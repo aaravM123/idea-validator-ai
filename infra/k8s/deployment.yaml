@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: idea-validator-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: idea-validator
+  template:
+    metadata:
+      labels:
+        app: idea-validator
+    spec:
+      containers:
+      - name: idea-validator
+        image: idea-validator:latest
+        imagePullPolicy: Never   # ← This line is REQUIRED
+        ports:
+        - containerPort: 8080
